@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -112,13 +112,15 @@ body::before {
 }
 
 .headline {
-    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
+    font-family: 'Playfair Display', 'Noto Sans JP', serif;
+    font-size: 48px;
+    font-weight: 800;
     color: var(--text-light);
     margin-bottom: 50px;
-    line-height: 1.4;
+    line-height: 1.2;
     position: relative;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .headline::after {
@@ -431,7 +433,7 @@ body::before {
     }
     
     .headline {
-        font-size: 24px;
+        font-size: 36px;
         margin-bottom: 40px;
     }
     
@@ -479,7 +481,7 @@ body::before {
     }
     
     .headline {
-        font-size: 20px;
+        font-size: 28px;
         margin-bottom: 35px;
     }
     
