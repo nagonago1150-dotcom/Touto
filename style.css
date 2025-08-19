@@ -115,6 +115,70 @@ body::before {
     100% { left: 100%; }
 }
 
+/* 商品画像のスタイル */
+.hero-image {
+    margin-bottom: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 
+        0 20px 60px rgba(139, 92, 246, 0.2),
+        0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: imageFloat 3s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+}
+
+.product-image:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 
+        0 30px 80px rgba(139, 92, 246, 0.3),
+        0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1), transparent);
+    border-radius: 50%;
+    animation: pulseGlow 4s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes imageFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
 .headline {
     font-family: 'Playfair Display', 'Noto Sans JP', serif;
     font-size: 48px;
@@ -453,6 +517,15 @@ body::before {
         border-radius: 20px;
     }
     
+    .product-image {
+        max-width: 240px;
+    }
+    
+    .hero-image::before {
+        width: 280px;
+        height: 280px;
+    }
+    
     .headline {
         font-size: 36px;
         margin-bottom: 40px;
@@ -499,6 +572,19 @@ body::before {
         padding: 35px 20px;
         margin: 0 10px;
         border-radius: 18px;
+    }
+    
+    .product-image {
+        max-width: 200px;
+    }
+    
+    .hero-image {
+        margin-bottom: 25px;
+    }
+    
+    .hero-image::before {
+        width: 240px;
+        height: 240px;
     }
     
     .headline {
