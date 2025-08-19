@@ -7,24 +7,24 @@
 }
 
 :root {
-    --primary-orange: #FF8C00;
-    --warm-orange: #FFA500;
-    --deep-orange: #FF6347;
-    --accent-yellow: #FFD700;
-    --accent-red: #DC143C;
-    --warm-yellow: #FFDF6B;
-    --glass-bg: rgba(255, 255, 255, 0.15);
-    --glass-border: rgba(255, 220, 180, 0.3);
-    --text-light: rgba(60, 30, 10, 0.9);
-    --text-medium: rgba(80, 40, 20, 0.8);
-    --shadow-glow: 0 0 40px rgba(255, 140, 0, 0.4);
+    --primary-gray: #6c757d;
+    --light-gray: #adb5bd;
+    --dark-gray: #495057;
+    --accent-blue: #0d6efd;
+    --accent-green: #198754;
+    --warm-white: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --text-light: #212529;
+    --text-medium: #6c757d;
+    --shadow-glow: 0 0 40px rgba(0, 0, 0, 0.1);
 }
 
 body {
     font-family: 'Inter', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
     line-height: 1.6;
     color: var(--text-light);
-    background: radial-gradient(ellipse at center, #FFD700 0%, #FFA500 35%, #FF8C00 70%, #FF6347 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
@@ -38,9 +38,9 @@ body::before {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.2) 0%, transparent 60%),
-        radial-gradient(circle at 80% 20%, rgba(255, 165, 0, 0.2) 0%, transparent 60%),
-        radial-gradient(circle at 40% 40%, rgba(255, 140, 0, 0.15) 0%, transparent 60%);
+        radial-gradient(circle at 20% 80%, rgba(248, 249, 250, 0.3) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(233, 236, 239, 0.3) 0%, transparent 60%),
+        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
     pointer-events: none;
     z-index: -1;
 }
@@ -115,14 +115,10 @@ body::before {
     font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
     font-size: 28px;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--accent-red), var(--deep-orange), var(--primary-orange));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-light);
     margin-bottom: 50px;
     line-height: 1.4;
     position: relative;
-    animation: textGlow 2s ease-in-out infinite alternate;
 }
 
 .headline::after {
@@ -133,7 +129,7 @@ body::before {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary-orange), var(--accent-yellow));
+    background: var(--accent-blue);
     border-radius: 2px;
 }
 
@@ -161,7 +157,6 @@ body::before {
     color: var(--text-light);
     margin-bottom: 40px;
     line-height: 1.5;
-    text-shadow: 0 2px 20px rgba(255, 140, 0, 0.4);
     animation: questionFadeIn 0.6s ease-out 0.3s both;
 }
 
@@ -312,8 +307,8 @@ body::before {
     width: 80px;
     height: 80px;
     border: 3px solid transparent;
-    border-top: 3px solid var(--primary-orange);
-    border-right: 3px solid var(--warm-orange);
+    border-top: 3px solid var(--accent-blue);
+    border-right: 3px solid var(--primary-gray);
 }
 
 .loading-spinner::after {
@@ -322,14 +317,14 @@ body::before {
     top: 10px;
     left: 10px;
     border: 3px solid transparent;
-    border-bottom: 3px solid var(--accent-yellow);
-    border-left: 3px solid var(--deep-orange);
+    border-bottom: 3px solid var(--accent-green);
+    border-left: 3px solid var(--dark-gray);
     animation-direction: reverse;
     animation-duration: 1.5s;
 }
 
 .loading-spinner {
-    filter: drop-shadow(0 0 20px rgba(255, 140, 0, 0.6));
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.1));
 }
 
 @keyframes orbit {
@@ -348,18 +343,13 @@ body::before {
     font-weight: 500;
     color: var(--text-light);
     font-size: 18px;
-    text-shadow: 0 2px 20px rgba(255, 140, 0, 0.4);
 }
 
 .loading-text p:last-child {
     margin-bottom: 0;
-    background: linear-gradient(135deg, var(--accent-red), var(--primary-orange), var(--accent-yellow));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--accent-blue);
     font-weight: 700;
     font-size: 20px;
-    animation: colorShift 3s ease-in-out infinite;
 }
 
 @keyframes loadingPulse {
@@ -400,18 +390,18 @@ body::before {
     position: absolute;
     width: 4px;
     height: 4px;
-    background: radial-gradient(circle, rgba(255, 140, 0, 0.8), transparent);
+    background: radial-gradient(circle, rgba(108, 117, 125, 0.3), transparent);
     border-radius: 50%;
     animation: floatParticle 15s linear infinite;
 }
 
 .particle:nth-child(odd) {
-    background: radial-gradient(circle, rgba(255, 165, 0, 0.6), transparent);
+    background: radial-gradient(circle, rgba(173, 181, 189, 0.3), transparent);
     animation-duration: 12s;
 }
 
 .particle:nth-child(3n) {
-    background: radial-gradient(circle, rgba(255, 215, 0, 0.5), transparent);
+    background: radial-gradient(circle, rgba(233, 236, 239, 0.4), transparent);
     animation-duration: 18s;
 }
 
