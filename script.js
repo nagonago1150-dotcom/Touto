@@ -139,10 +139,10 @@ function createClickEffect(element, isClick = false) {
     effect.style.zIndex = '1000';
     
     if (isClick) {
-        effect.style.background = 'radial-gradient(circle, rgba(249, 115, 22, 0.6), rgba(234, 179, 8, 0.3), transparent)';
+        effect.style.background = 'radial-gradient(circle, rgba(255, 140, 0, 0.6), rgba(255, 215, 0, 0.3), transparent)';
         effect.style.animation = 'clickRipple 0.8s ease-out forwards';
     } else {
-        effect.style.background = 'radial-gradient(circle, rgba(139, 92, 246, 0.3), transparent)';
+        effect.style.background = 'radial-gradient(circle, rgba(255, 165, 0, 0.3), transparent)';
         effect.style.animation = 'hoverRipple 0.6s ease-out forwards';
     }
     
@@ -255,7 +255,7 @@ function createCursorEffect() {
     cursor.style.width = '20px';
     cursor.style.height = '20px';
     cursor.style.borderRadius = '50%';
-    cursor.style.background = 'radial-gradient(circle, rgba(139, 92, 246, 0.3), transparent)';
+    cursor.style.background = 'radial-gradient(circle, rgba(255, 140, 0, 0.3), transparent)';
     cursor.style.pointerEvents = 'none';
     cursor.style.zIndex = '9999';
     cursor.style.transition = 'transform 0.1s ease';
