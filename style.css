@@ -380,6 +380,9 @@ body::before {
     height: 80px;
     position: relative;
     margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .loading-spinner::before,
@@ -387,15 +390,17 @@ body::before {
     content: '';
     position: absolute;
     border-radius: 50%;
-    animation: orbit 2s linear infinite;
+    top: 0;
+    left: 0;
 }
 
 .loading-spinner::before {
     width: 80px;
     height: 80px;
-    border: 3px solid transparent;
-    border-top: 3px solid rgba(245, 245, 220, 0.8);
-    border-right: 3px solid rgba(221, 216, 196, 0.6);
+    border: 4px solid transparent;
+    border-top: 4px solid var(--accent-gold);
+    border-right: 4px solid rgba(212, 175, 55, 0.6);
+    animation: spinClockwise 2s linear infinite;
 }
 
 .loading-spinner::after {
@@ -404,20 +409,29 @@ body::before {
     top: 10px;
     left: 10px;
     border: 3px solid transparent;
-    border-bottom: 3px solid rgba(240, 234, 214, 0.8);
-    border-left: 3px solid rgba(230, 220, 201, 0.6);
-    animation-direction: reverse;
-    animation-duration: 1.5s;
+    border-bottom: 3px solid var(--soft-brown);
+    border-left: 3px solid rgba(139, 115, 85, 0.7);
+    animation: spinCounterClockwise 1.5s linear infinite;
 }
 
-.loading-spinner {
-    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.1));
+@keyframes spinClockwise {
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        transform: rotate(360deg); 
+    }
 }
 
-@keyframes orbit {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+@keyframes spinCounterClockwise {
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        transform: rotate(-360deg); 
+    }
 }
+
 
 .loading-text {
     text-align: center;
@@ -559,6 +573,11 @@ body::before {
         height: 70px;
     }
     
+    .loading-spinner::before {
+        width: 70px;
+        height: 70px;
+    }
+    
     .loading-spinner::after {
         width: 50px;
         height: 50px;
@@ -609,6 +628,11 @@ body::before {
     }
     
     .loading-spinner {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .loading-spinner::before {
         width: 60px;
         height: 60px;
     }
