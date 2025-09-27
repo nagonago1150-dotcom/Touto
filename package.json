@@ -1,0 +1,23 @@
+{
+  "name": "touto-lp-multiple",
+  "version": "1.0.0",
+  "description": "Multiple path LP for Touto supplement with dynamic redirects",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "build": "echo 'Static site - no build needed'",
+    "start": "python -m http.server 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/username/touto-lp-multiple.git"
+  },
+  "keywords": [
+    "landing-page",
+    "supplement",
+    "touto",
+    "multiple-paths"
+  ],
+  "author": "Frontend Developer",
+  "license": "MIT"
+}
