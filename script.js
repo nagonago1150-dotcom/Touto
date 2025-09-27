@@ -180,11 +180,28 @@ function addDynamicStyles() {
     document.head.appendChild(style);
 }
 
+// パス別リダイレクトURL設定
+function getRedirectUrl() {
+    const path = window.location.pathname;
+    const redirectUrls = {
+        '/1': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41ruivpeep',
+        '/2': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi44h49yhgux',
+        '/3': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41q1o5alqr',
+        '/4': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41q4mbpxi9',
+        '/5': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41q3pp22zj',
+        '/6': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi4e9lzv5vxl',
+        '/7': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41q28cb1ef'
+    };
+
+    // パスに対応するURLがあれば返す、なければデフォルトURL
+    return redirectUrls[path] || 'https://www.nalpharma.net/lp?u=touto_test';
+}
+
 // ローディング画面表示と自動リダイレクト
 function showLoadingAndRedirect() {
     // ローディング画面を表示
     showScreen('loading');
-    
+
     // ローディング中にさらなる視覚効果を追加
     const loadingContainer = document.querySelector('.loading-container');
     if (loadingContainer) {
@@ -195,12 +212,12 @@ function showLoadingAndRedirect() {
             }, i * 200);
         }
     }
-    
+
     // 2秒後に外部サイトへリダイレクト
     setTimeout(() => {
-        // 最終遷移先URL
-        const redirectUrl = 'https://www.nalpharma.net/lp?u=touto_test';
-        
+        // パスに応じた最終遷移先URLを取得
+        const redirectUrl = getRedirectUrl();
+
         // ページを遷移
         window.location.href = redirectUrl;
     }, 2000);
