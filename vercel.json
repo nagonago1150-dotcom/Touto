@@ -2,14 +2,5 @@
   "buildCommand": "echo 'No build needed for static site'",
   "outputDirectory": ".",
   "installCommand": "echo 'No install needed'",
-  "devCommand": "python -m http.server 3000",
-  "rewrites": [
-    { "source": "/1", "destination": "/index.html" },
-    { "source": "/2", "destination": "/index.html" },
-    { "source": "/3", "destination": "/index.html" },
-    { "source": "/4", "destination": "/index.html" },
-    { "source": "/5", "destination": "/index.html" },
-    { "source": "/6", "destination": "/index.html" },
-    { "source": "/7", "destination": "/index.html" }
-  ]
+  "devCommand": "python -m http.server 3000"
 }
