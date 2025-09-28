@@ -1,13 +1,12 @@
 {
   "rewrites": [
-    { "source": "/1", "destination": "/" },
-    { "source": "/2", "destination": "/" },
-    { "source": "/3", "destination": "/" },
-    { "source": "/4", "destination": "/" },
-    { "source": "/5", "destination": "/" },
-    { "source": "/6", "destination": "/" },
-    { "source": "/7", "destination": "/" }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+    { "source": "/1", "destination": "/index.html" },
+    { "source": "/2", "destination": "/index.html" },
+    { "source": "/3", "destination": "/index.html" },
+    { "source": "/4", "destination": "/index.html" },
+    { "source": "/5", "destination": "/index.html" },
+    { "source": "/6", "destination": "/index.html" },
+    { "source": "/7", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
