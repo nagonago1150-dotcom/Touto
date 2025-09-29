@@ -193,8 +193,8 @@ function getRedirectUrl() {
         '/7': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41q28cb1ef'
     };
 
-    // パスに対応するURLがあれば返す、なければデフォルトURL
-    return redirectUrls[path] || 'https://www.nalpharma.net/lp?u=touto_test';
+    // パスに対応するURLがあれば返す、なければデフォルトURL（/1と同じリンクを使用）
+    return redirectUrls[path] || 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41ruivpeep';
 }
 
 // ローディング画面表示と自動リダイレクト
