@@ -184,15 +184,15 @@ function addDynamicStyles() {
 function getRedirectUrl() {
     const path = window.location.pathname;
 
-    // 各パスに対応する販売リンクの設定（確実におおもとのLPに到達）
+    // 各パスに対応する販売リンクの設定（sf-system.jp経由でおおもとのLPへ）
     const redirectUrls = {
-        '/1': 'https://www.nalpharma.net/lp?u=touto_kyoyu&sb_tracking=true&src=path1',
-        '/2': 'https://www.nalpharma.net/lp?u=touto_kyoyu&sb_tracking=true&src=path2',
-        '/3': 'https://www.nalpharma.net/lp?u=touto_kyoyu&sb_tracking=true&src=path3',
-        '/4': 'https://www.nalpharma.net/lp?u=touto_kyoyu&sb_tracking=true&src=path4',
-        '/5': 'https://www.nalpharma.net/lp?u=touto_kyoyu&sb_tracking=true&src=path5',
-        '/6': 'https://www.nalpharma.net/lp?u=touto_kyoyu&sb_tracking=true&src=path6',
-        '/7': 'https://www.nalpharma.net/lp?u=touto_kyoyu&sb_tracking=true&src=path7'
+        '/1': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41ruivpeep',
+        '/2': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi44h49yhgux',
+        '/3': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41q1o5alqr',
+        '/4': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41q4mbpxi9',
+        '/5': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41q3pp22zj',
+        '/6': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi4e9lzv5vxl',
+        '/7': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41q28cb1ef'
     };
 
     console.log('🔍 パス検出:', path);
