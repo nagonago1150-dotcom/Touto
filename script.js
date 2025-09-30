@@ -184,19 +184,8 @@ function addDynamicStyles() {
 function getRedirectUrl() {
     const path = window.location.pathname;
 
-    // テスト用：直接nalpharma.netのURLも用意
+    // 直接nalpharma.netのURLに変更（sf-system.jpリンクが無効のため）
     const redirectUrls = {
-        '/1': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41ruivpeep',
-        '/2': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi44h49yhgux',
-        '/3': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41q1o5alqr',
-        '/4': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41q4mbpxi9',
-        '/5': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41q3pp22zj',
-        '/6': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi4e9lzv5vxl',
-        '/7': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41q28cb1ef'
-    };
-
-    // 緊急用：sf-system.jpが動作しない場合の直接URL
-    const fallbackUrls = {
         '/1': 'https://www.nalpharma.net/lp?u=touto_lp01_1980_g01_mml_meta19',
         '/2': 'https://www.nalpharma.net/lp?u=touto_lp02_1980_g01_mml_meta19',
         '/3': 'https://www.nalpharma.net/lp?u=touto_lp03_1980_g01_mml_meta19',
@@ -206,10 +195,11 @@ function getRedirectUrl() {
         '/7': 'https://www.nalpharma.net/lp?u=touto_lp07_1980_g01_mml_meta19'
     };
 
+
     console.log('🔍 URL選択中 - パス:', path);
 
     // パスに対応するURLがあれば返す、なければデフォルトURL
-    const selectedUrl = redirectUrls[path] || 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41ruivpeep';
+    const selectedUrl = redirectUrls[path] || 'https://www.nalpharma.net/lp?u=touto_lp01_1980_g01_mml_meta19';
     console.log('✅ 選択されたURL:', selectedUrl);
 
     return selectedUrl;
