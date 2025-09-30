@@ -218,6 +218,12 @@ function showLoadingAndRedirect() {
         // パスに応じた最終遷移先URLを取得
         const redirectUrl = getRedirectUrl();
 
+        // リダイレクト情報をコンソールに出力（確認用）
+        console.log('=== リダイレクト情報 ===');
+        console.log('現在のパス:', window.location.pathname);
+        console.log('リダイレクト先URL:', redirectUrl);
+        console.log('========================');
+
         // ページを遷移
         window.location.href = redirectUrl;
     }, 2000);
