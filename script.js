@@ -184,7 +184,7 @@ function addDynamicStyles() {
 function getRedirectUrl() {
     const path = window.location.pathname;
 
-    // sf-system.jpの指定されたアフィリエイトURLを使用
+    // 各パスに対応する販売リンクの設定
     const redirectUrls = {
         '/1': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41ruivpeep',
         '/2': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi44h49yhgux',
@@ -195,14 +195,21 @@ function getRedirectUrl() {
         '/7': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41q28cb1ef'
     };
 
+    console.log('🔍 パス検出:', path);
+    console.log('📋 利用可能なパス:', Object.keys(redirectUrls));
 
-    console.log('🔍 URL選択中 - パス:', path);
-
-    // パスに対応するURLがあれば返す、なければデフォルトURL（/1と同じ）
-    const selectedUrl = redirectUrls[path] || 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41ruivpeep';
+    // パスに対応するURLを取得（デフォルトは/1と同じURL）
+    const selectedUrl = redirectUrls[path] || redirectUrls['/1'];
     console.log('✅ 選択されたURL:', selectedUrl);
 
-    return selectedUrl;
+    // URL検証
+    if (selectedUrl && selectedUrl.startsWith('https://')) {
+        console.log('✅ URL検証成功');
+        return selectedUrl;
+    } else {
+        console.error('❌ URL検証失敗, デフォルトURL使用');
+        return redirectUrls['/1'];
+    }
 }
 
 // ローディング画面表示と自動リダイレクト
@@ -233,12 +240,8 @@ function showLoadingAndRedirect() {
         console.log('⏰ 3秒後にリダイレクトします...');
         console.log('🔄🔄🔄🔄🔄🔄🔄🔄🔄🔄🔄🔄🔄🔄🔄');
 
-        // アラートでも表示（テスト用）
-        alert('リダイレクト先: ' + redirectUrl);
-
-        // リダイレクト前に追加の確認
+        // リダイレクト先確認
         console.log('🚀 リダイレクト実行直前...');
-        console.log('🌐 User Agent:', navigator.userAgent);
         console.log('🔗 完全URL:', redirectUrl);
 
         // より確実なリダイレクト方法を試行
