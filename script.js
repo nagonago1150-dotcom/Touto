@@ -219,10 +219,14 @@ function showLoadingAndRedirect() {
         const redirectUrl = getRedirectUrl();
 
         // リダイレクト情報をコンソールに出力（確認用）
-        console.log('=== リダイレクト情報 ===');
-        console.log('現在のパス:', window.location.pathname);
-        console.log('リダイレクト先URL:', redirectUrl);
-        console.log('========================');
+        console.log('🔄🔄🔄 TOUTO リダイレクト開始 🔄🔄🔄');
+        console.log('📍 現在のパス:', window.location.pathname);
+        console.log('🎯 リダイレクト先URL:', redirectUrl);
+        console.log('⏰ 3秒後にリダイレクトします...');
+        console.log('🔄🔄🔄🔄🔄🔄🔄🔄🔄🔄🔄🔄🔄🔄🔄');
+
+        // アラートでも表示（テスト用）
+        alert('リダイレクト先: ' + redirectUrl);
 
         // ページを遷移
         window.location.href = redirectUrl;
@@ -317,7 +321,10 @@ document.addEventListener('DOMContentLoaded', function() {
     setupChoiceButtons();
     
     // コンソールに開始メッセージ
-    console.log('✨ 「とうと」アンケートLP が読み込まれました');
+    console.log('✨✨✨ 「とうと」アンケートLP が読み込まれました ✨✨✨');
+    console.log('📍 現在のURL:', window.location.href);
+    console.log('📍 現在のパス:', window.location.pathname);
+    console.log('✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨');
 });
 
 // デバッグ用：回答内容をコンソールに出力
