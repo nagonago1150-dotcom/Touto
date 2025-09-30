@@ -183,6 +183,8 @@ function addDynamicStyles() {
 // パス別リダイレクトURL設定
 function getRedirectUrl() {
     const path = window.location.pathname;
+
+    // テスト用：直接nalpharma.netのURLも用意
     const redirectUrls = {
         '/1': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41ruivpeep',
         '/2': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi44h49yhgux',
@@ -193,8 +195,24 @@ function getRedirectUrl() {
         '/7': 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41q28cb1ef'
     };
 
-    // パスに対応するURLがあれば返す、なければデフォルトURL（/1と同じリンクを使用）
-    return redirectUrls[path] || 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41ruivpeep';
+    // 緊急用：sf-system.jpが動作しない場合の直接URL
+    const fallbackUrls = {
+        '/1': 'https://www.nalpharma.net/lp?u=touto_lp01_1980_g01_mml_meta19',
+        '/2': 'https://www.nalpharma.net/lp?u=touto_lp02_1980_g01_mml_meta19',
+        '/3': 'https://www.nalpharma.net/lp?u=touto_lp03_1980_g01_mml_meta19',
+        '/4': 'https://www.nalpharma.net/lp?u=touto_lp04_1980_g01_mml_meta19',
+        '/5': 'https://www.nalpharma.net/lp?u=touto_lp05_1980_g01_mml_meta19',
+        '/6': 'https://www.nalpharma.net/lp?u=touto_lp06_1980_g01_mml_meta19',
+        '/7': 'https://www.nalpharma.net/lp?u=touto_lp07_1980_g01_mml_meta19'
+    };
+
+    console.log('🔍 URL選択中 - パス:', path);
+
+    // パスに対応するURLがあれば返す、なければデフォルトURL
+    const selectedUrl = redirectUrls[path] || 'https://sf-system.jp/link.php?i=pi4ser44dpib&m=mi41ruivpeep';
+    console.log('✅ 選択されたURL:', selectedUrl);
+
+    return selectedUrl;
 }
 
 // ローディング画面表示と自動リダイレクト
@@ -228,8 +246,20 @@ function showLoadingAndRedirect() {
         // アラートでも表示（テスト用）
         alert('リダイレクト先: ' + redirectUrl);
 
-        // ページを遷移
-        window.location.href = redirectUrl;
+        // リダイレクト前に追加の確認
+        console.log('🚀 リダイレクト実行直前...');
+        console.log('🌐 User Agent:', navigator.userAgent);
+        console.log('🔗 完全URL:', redirectUrl);
+
+        // より確実なリダイレクト方法を試行
+        try {
+            console.log('🎯 window.location.href でリダイレクト試行中...');
+            window.location.href = redirectUrl;
+        } catch (error) {
+            console.error('❌ window.location.href でエラー:', error);
+            console.log('🔄 window.open で代替試行中...');
+            window.open(redirectUrl, '_self');
+        }
     }, 2000);
 }
 
